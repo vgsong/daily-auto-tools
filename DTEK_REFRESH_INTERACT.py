@@ -56,7 +56,7 @@ class DTEK_REFRESHER:
     def deltek_login(self):
 
         # GET url
-        self.driver.get('https://cordobacorp.deltekfirst.com/cordobacorp/app/#!InteractiveBilling/view/0/0/1111.000.001/presentation')
+        self.driver.get('https://url.com')
 
         print('Logging into Deltek PORTAL...')
         time.sleep(2)
@@ -67,10 +67,10 @@ class DTEK_REFRESHER:
 
         # login page: emailfield and passw and the textfield for login information
         user_name = self.driver.find_element(By.XPATH, '//*[@id="userID"]')
-        user_name.send_keys('VICTORSONG')
+        user_name.send_keys('USERNAME')
 
         passw = self.driver.find_element(By.XPATH, '//*[@id="password"]')
-        passw.send_keys('Ishmael483594$')
+        passw.send_keys('PASSWORD')
 
         time.sleep(3)
 
