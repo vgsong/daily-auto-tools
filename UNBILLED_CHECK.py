@@ -29,8 +29,8 @@ class UnbilledCheck(ITDReader):
                     ]
         
         self.cc_list = [ 
-                        'janel.toregozhina@cordobacorp.com;',
-                        'vincent.tran@cordobacorp.com',
+                        'fulano.silva@company.com'
+                        'fulana.silva@company.com'
         ]
 
     def unpickle(self):
