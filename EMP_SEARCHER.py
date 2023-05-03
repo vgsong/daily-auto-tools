@@ -18,7 +18,7 @@ class EmpSearcher:
         self.main_fpath = fr'C:\Users\V Song\Documents\FromHost\_FROMOUTLOOK\DTEK_DAILY_EMP_LIST.csv'
 
         # deltek url for emphub
-        self.url = 'https://cordobacorp.deltekfirst.com/cordobacorp/app/#!Employees/view/0/experience_web/{}/hybrid/'
+        self.url = 'https://urlhere'
 
         # omit info bol
         self.omit_info = omit_info
@@ -33,8 +33,8 @@ class EmpSearcher:
                             ]
 
         self.url_choices = {
-            'unlock': 'https://cordobacorp.deltekfirst.com/cordobacorp/app/#!Users/view/0/0/{}/hybrid',
-            'HUB': 'https://cordobacorp.deltekfirst.com/cordobacorp/app/#!Employees/view/0/experience_web/{}/hybrid/',
+            'unlock': 'https://webappurl.com',
+            'HUB': 'https://webappurl.com',
             # '': '',
             # 'unlock': '',
         }

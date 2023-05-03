@@ -13,20 +13,11 @@ class FloorChecker:
         self.sheet_week_range = 'WEEKRANGE'
         
         self.distr_cc_list = [
-                            'lmurguia@cordobacorp.com',
-                            'janel.toregozhina@cordobacorp.com', 
-                            'salmanza@cordobacorp.com',
-                            'vincent.tran@cordobacorp.com', 
-                            'tromo@cordobacorp.com',
-                            'Ngan.Nguyen@cordobacorp.com',
-                            'Elizabeth.Lopez@cordobacorp.com',
+                        'cc.listfrom@company.com'
                                     ]
         
         self.energy_directors = (
-            'Brad.Carter@cordobacorp.com',
-            'stenorio@cordobacorp.com',
-            'pyu@cordobacorp.com',
-            'Hugo.Mejia@cordobacorp.com',
+            'director.email@company.com'
         )
 
         self.table_columns = (
@@ -137,6 +128,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-# https://cordobacorp.deltekfirst.com/cordobacorp/app/#!Timekeeper/view/0/0/1802%7C2023-04-15%7C%20/presentation

@@ -6,7 +6,7 @@ class ProjLauncher:
     def __init__(self):
         self.list_fpath = fr'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\TS_PROJECT_ADD_LIST_COMMON.csv'
         self.proj_csv = self.get_proj_list()
-        self.url = 'https://webappurl.com
+        self.url = 'https://webappurl.com'
 
     def get_proj_list(self):
         result = list()
