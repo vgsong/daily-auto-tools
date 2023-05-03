@@ -1,0 +1,11 @@
+_backup/
+_mapping/
+_picklenv/
+_temp/
+_webdriver/
+.idea/
+db/
+tenv/
+geckodriver.log
+spend_diary.py
+vs_classes/
