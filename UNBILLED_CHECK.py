@@ -27,6 +27,11 @@ class UnbilledCheck(ITDReader):
                         '1360.000.001',
                         '1319.\d{3}.\d{3}',
                     ]
+        
+        self.cc_list = [ 
+                        'janel.toregozhina@cordobacorp.com;',
+                        'vincent.tran@cordobacorp.com',
+        ]
 
     def unpickle(self):
         with open(r"C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_picklenv\data\envs.pickle", "rb") as pfile:
@@ -139,8 +144,7 @@ class UnbilledCheck(ITDReader):
             olapp = Dispatch('Outlook.Application')
             olmail = olapp.CreateItem(0)
 
-            olmail.CC = 'janel.toregozhina@cordobacorp.com;' \
-                        'vincent.tran@cordobacorp.com'
+            olmail.CC = ';'.join(self.cc_list)
 
             olmail.Subject = f'DELTEK ZERO RATE - {sector[1]}'
 
