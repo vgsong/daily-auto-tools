@@ -84,7 +84,7 @@ class NewHire:
     def get_filtered_outlook_items(self, n_days):
 
         olapp = Dispatch('outlook.application')
-        mapi = olapp.GetNamespace('MAPI').Folders('victor.song@cordobacorp.com').Folders('Inbox').Folders('_NEWHIRE').Items
+        mapi = olapp.GetNamespace('MAPI').Folders('first.last@company.com').Folders('Inbox').Folders('_NEWHIRE').Items
         received_dt = datetime.now() - timedelta(days=n_days)
         received_dt = received_dt.strftime('%m/%d/%Y %H:%M %p')
         messages = mapi.Restrict("[ReceivedTime] >= '" + received_dt + "'")

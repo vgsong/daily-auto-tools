@@ -7,39 +7,33 @@ class POSender:
         self.att_fpath = fr'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp'
 
         self.cc_list = [
-                    'contracts@cordobacorp.com',
-                    'nissagholian@cordobacorp.com',
-                    'janel.Toregozhina@cordobacorp.com',
-                    'tromo@cordobacorp.com',
-                    'salmanza@cordobacorp.com',
-                    'michael.avina@cordobacorp.com',
-                    'stenorio@cordobacorp.com',
-                    'lmurguia@cordobacorp.com',
-                    'Elizabeth.Lopez@cordobacorp.com',
+                    'contracts@company.com',
+                    'sectors@company.com',
+
         ]
         
         self.test_list = [
-            'lmurguia@cordobacorp.com',
-            'victor.song@cordobacorp.com',
+            'Johnny.bgode@company.com',
+            'john.smith@company.com',
         ]
 
         self.wo_dict = {
             'Electric': [
-                        'Electric',
-                        'Brad Carter',
-                        'brad.carter@cordobacorp.com',
+                        'SECTOR NAME',
+                        'MANAGER NAME',
+                        'manager.name@company.com',
                         ],
 
             'Gas': [
-                        'Gas',
-                        'Peter Yu',
-                        'pyu@cordobacorp.com',
+                        'SECTOR NAME',
+                        'MANAGER NAME',
+                        'manager.name@company.com',
                         ],
 
             'Energy': [
-                        'Energy',
-                        'Sam Tenorio',
-                        'stenorio@cordobacorp.com',
+                        'SECTOR NAME',
+                        'MANAGER NAME',
+                        'manager.name@company.com',
                     ],
         }
 
@@ -81,10 +75,10 @@ class POSender:
                 olmail.To = v[2]
 
                 if k == 'Energy' or k == 'Gas':
-                    olmail.Cc = f'{";".join(self.cc_list)}; Hugo.Mejia@cordobacorp.com'
+                    olmail.Cc = f'{";".join(self.cc_list)}; other.directors@company.com'
                 
                 elif k == 'Electric':
-                    olmail.Cc = f'{";".join(self.cc_list)}; Jennifer.Yamaguchi@cordobacorp.com; Andrew.Domask@cordobacorp.com; Emily.Newcomer@cordobacorp.com'
+                    olmail.Cc = f'{";".join(self.cc_list)}; other.directors@company.com; otherseniors@company.com'
 
                 olmail.Subject = f'{k}: Contract Management Report - {mper} {yper}'
                 olmail.Attachments.Add(fr'{self.att_fpath}\{v[0]}_MAIN_PO_REPORT_DISTR.xlsx')

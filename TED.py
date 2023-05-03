@@ -69,13 +69,13 @@ class TedDaily:
 
         self.outlook_wo = {
         'PM': [
-            'fulano.olivera@cordobacorp.com; fulano.olivera@cordobacorp.com',
+            'fulano.olivera@company.com; fulano.olivera@company.com',
             '',
             'TED_PROJ_STRUCTURE.xlsx',
         ],
 
         'DISTR': [
-            'john.doe@cordobacorp.com; john.doe@cordobacorp.com',
+            'john.doe@company.com; john.doe@company.com',
             'TED_PROJ_STRUCTURE_DISTR.xlsx',
         ],
             }

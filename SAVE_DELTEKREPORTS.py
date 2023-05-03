@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 class DeltekReportSaver:
     def __init__(self):
-        self.outlook_maininbox = 'victor.song@cordobacorp.com'
+        self.outlook_maininbox = 'my.email@company.com'
 
         self.DIR_DICT = dict()
         self.unpickle()
