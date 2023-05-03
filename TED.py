@@ -54,7 +54,7 @@ class TedDaily:
         #         '1413.000.001': ['5660067008', 'Distribution TED Fiber Program OE Services', '5000000', ],
         #         }
 
-        self.itd_data = pd.read_csv(r'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\ITD_VS.csv',
+        self.itd_data = pd.read_csv(fr'{self.DIR_DICT["MAIN_TEMP"]}\ITD_VS.csv',
                                     header=None,
                                     names=self.itd_col_names,
                                     )
@@ -69,19 +69,18 @@ class TedDaily:
 
         self.outlook_wo = {
         'PM': [
-            'George.Younan@cordobacorp.com; ryan.jordan@cordobacorp.com',
+            'fulano.olivera@cordobacorp.com; fulano.olivera@cordobacorp.com',
             '',
             'TED_PROJ_STRUCTURE.xlsx',
         ],
 
         'DISTR': [
-            'Calvin.Noe@cordobacorp.com; ketan.lahurikar@cordobacorp.com; Joseph.Mina@cordobacorp.com; '
-            'Sarah.Bruzdoski@cordobacorp.com; John.Shull@cordobacorp.com; joseph.bailey@cordobacorp.com; '
-            'Roberto.Provencio@cordobacorp.com; Jessica.Smith@cordobacorp.com; Cody.Erwin@cordobacorp.com; ',
-            'George.Younan@cordobacorp.com; ryan.jordan@cordobacorp.com',
+            'john.doe@cordobacorp.com; john.doe@cordobacorp.com',
             'TED_PROJ_STRUCTURE_DISTR.xlsx',
-                                                                          ],
+        ],
             }
+
+        self.output_save_dir = self.DIR_DICT['MAIN_TEMP']
 
     def unpickle(self):
 
@@ -144,7 +143,7 @@ class TedDaily:
         self.filtered_itd = df.copy()
 
         df.to_csv(
-            fr"C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\TED_PROJ_LIST.csv",
+            fr'{self.output_save_dir}\TED_PROJ_LIST.csv',
             index=False
         )
 
@@ -163,8 +162,8 @@ class TedDaily:
 
 
         # Opening dataframes and existing workbook
-        wbs_df = pd.read_csv(r'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\TED_PROJ_LIST.csv')
-        wb = load_workbook(r'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\TED_PROJ_STRUCTURE.xlsx')
+        wbs_df = pd.read_csv(fr'{self.output_save_dir}\TED_PROJ_LIST.csv')
+        wb = load_workbook(fr'{self.output_save_dir}\TED_PROJ_STRUCTURE.xlsx')
 
         # Workorder for dict loop for the TASK and ITD sheet in excel file DISTR
         # used in the following for loop
@@ -187,7 +186,7 @@ class TedDaily:
                 for c in range(0, v[1]):
                     ws.cell(row=i+1, column=c+1).value = x[c]
 
-        wb.save(r'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\TED_PROJ_STRUCTURE.xlsx')
+        wb.save(fr'{self.output_save_dir}\TED_PROJ_STRUCTURE.xlsx')
 
         sheet_to_del = wb.get_sheet_by_name('NOTES')
         wb.remove_sheet(sheet_to_del)
@@ -195,7 +194,7 @@ class TedDaily:
         sheet_to_del = wb.get_sheet_by_name('ITD')
         wb.remove_sheet(sheet_to_del)
 
-        wb.save(r'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\TED_PROJ_STRUCTURE_DISTR.xlsx')
+        wb.save(fr'{self.output_save_dir}\TED_PROJ_STRUCTURE_DISTR.xlsx')
 
         del wb
 
@@ -209,7 +208,7 @@ class TedDaily:
             olmail.To = v[0]
             olmail.Cc = v[1]
             olmail.Subject = f'DAILY_TED_PROJECT_STRUCTURE_{self.TIME_STAMP}_{k}'
-            olmail.Attachments.Add(fr'C:\Users\V Song\Desktop\_PYTHONSCRIPTS\_temp\{v[2]}')
+            olmail.Attachments.Add(fr'{self.output_save_dir}\{v[2]}')
 
             olmail.HTMLbody = f'Hi -- <br><br>' \
                               f'Please see attached for the daily TED Project Structure Report as for {self.TIME_STAMP}<br><br>' \
